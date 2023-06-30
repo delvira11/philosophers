@@ -1,7 +1,7 @@
 CC= gcc -g
 NAME=philo
-CFLAGS= -Wall -Werror -Wextra
-SRC= main.c
+CFLAGS= -Wall -Wextra -Werror
+SRC= main.c routines.c inits.c simulation.c time_utils.c utils.c
 OBJ=$(SRC:.c=.o)
 
 
@@ -15,10 +15,10 @@ $(NAME): $(OBJ)
 clean:
 	rm -rf $(OBJ)
 
-fclean:
+fclean: clean
 	rm -rf $(NAME)
 
 
-re:
+re: fclean all
 
 .PHONY: libft
